@@ -19,7 +19,7 @@ public class myDbAdapter {
         {
             SQLiteDatabase dbb = myhelper.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            contentValues.put(myDbHelper.NAME, name);
+            contentValues.put(myDbHelper.NAME1, name);
             contentValues.put(myDbHelper.MyPASSWORD, pass);
             long id = dbb.insert(myDbHelper.TABLE_NAME, null , contentValues);
             return id;
@@ -63,14 +63,40 @@ public class myDbAdapter {
         static class myDbHelper extends SQLiteOpenHelper
         {
             private static final String DATABASE_NAME = "myDatabase";    // Database Name
-            private static final String TABLE_NAME = "myTable";   // Table Name
             private static final int DATABASE_Version = 1;    // Database Version
-            private static final String UID="_id";     // Column I (Primary Key)
-            private static final String NAME = "Name";    //Column II
-            private static final String MyPASSWORD= "Password";    // Column III
-            private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+
-                    " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+NAME+" VARCHAR(255) ,"+ MyPASSWORD+" VARCHAR(225));";
+            private static final String TABLE_NAME = "Skole"; //Table Name
+            private static final String UID = "SkoleID"; // Column 1
+            private static final String SCHOOL_NAME = "Skolenavn"; // Column 2
+            private static final String CAMPUS = "Campus"; // Column 3
+            private static final String TABLE_NAME2 = "Student";   // Table Name
+            private static final String SID = "StudentID";     // Column 1 (Primary Key)
+            private static final String PASSWORD = "Passord"; // Column 2
+            private static final String NAME1 = "Fornavn";    //Column 3
+            private static final String NAME2 = "Etternavn";    // Column 4
+            private static final String SOCIAL = "Sosialemedier"; // Column 5
+            private static final String BIO = "Biografi"; // Column 6
+            private static final String SCHOOL = "SkoleID"; // Column 7
+            private static final String SUBJECT = "Fag"; //Column 8
+            private static final String YEAR = "Årskull"; // Column 9
+            private static final String CREATE_TABLE = "CREATE TABLE "
+                    + TABLE_NAME + " ("
+                    + UID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + SCHOOL_NAME + " VARCHAR(40), "
+                    + CAMPUS +" VARCHAR(30));";
             private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
+            private static final String CREATE_TABLE2 = "CREATE TABLE "
+                    + TABLE_NAME2 + " ("
+                    + SID + " CHAR(6), "
+                    + PASSWORD + " VARCHAR(30), "
+                    + NAME1 + " VARCHAR(30), "
+                    + NAME2 + " VARCHAR(40), "
+                    + SOCIAL + " VARCHAR(80), "
+                    + BIO + " VARCHAR(100), "
+                    + SCHOOL + " INTEGER, "
+                    + SUBJECT + " VARCHAR(40), "
+                    + YEAR + " INTEGER, "
+                    + " FOREIGN KEY ("+SCHOOL+") REFERENCES "+TABLE_NAME+"("+UID+"));";
+            private static final String DROP_TABLE2 ="DROP TABLE IF EXISTS "+TABLE_NAME2;
             private Context context;
 
             public myDbHelper(Context context) {
@@ -82,6 +108,7 @@ public class myDbAdapter {
 
                 try {
                     db.execSQL(CREATE_TABLE);
+                    db.execSQL(CREATE_TABLE2);
                 } catch (Exception e) {
                     Toast.makeText(context, ""+e, Toast.LENGTH_SHORT).show();
                 }
@@ -92,6 +119,7 @@ public class myDbAdapter {
                 try {
                     Toast.makeText(context, "OnUpgrade", Toast.LENGTH_SHORT).show();
                     db.execSQL(DROP_TABLE);
+                    db.execSQL(DROP_TABLE2);
                     onCreate(db);
                 }catch (Exception e) {
                     Toast.makeText(context, ""+e, Toast.LENGTH_SHORT).show();
