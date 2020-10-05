@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">MOB3000</string>
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_email">Epost</string>
+    <string name="prompt_password">Passord</string>
+    <string name="action_sign_in">Logg inn</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Velkommen!"</string>
+    <string name="invalid_username">Ikke gyldig brukernavn</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Logg inn failet"</string>
+    <string name="registration">Registrer</string>
+    <string name="firstName">Fornavn</string>
+    <string name="lastName">Etternavn</string>
+    <string name="campus">Campus</string>
+    <string name="year">Årskull</string>
+    <string name="education">Utdanning</string>
+    <string name="subject">Fag</string>
+    <string name="bio">Biografi</string>
+    <string name="link">Lik til sosiale medier</string>
+    <string name="userPic">Last opp bilde</string>
+    <string name="reg">Registrer</string>
+    <string name="name">Navn</string>
+    <string name="sokefelt">Søkefelt..</string>
+    <string name="om_appen">Om appen...</string>
+    <string name="konto">Konto</string>
 </resources>
