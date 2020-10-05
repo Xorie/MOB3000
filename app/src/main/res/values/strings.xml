@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MOB3000</string>
-    <string name="title_activity_login">Login</string>
+    <string name="login">Login</string>
     <string name="prompt_email">Epost</string>
     <string name="prompt_password">Passord</string>
     <string name="action_sign_in">Logg inn</string>
@@ -24,4 +24,7 @@
     <string name="sokefelt">Søkefelt..</string>
     <string name="om_appen">Om appen...</string>
     <string name="konto">Konto</string>
+    <string name="studentnr">Studentnr</string>
+    <string name="password">Passord</string>
+    <string name="school">Skolenavn</string>
 </resources>

@@ -84,7 +84,7 @@
         android:contentDescription="TODO" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/registration"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/registration"

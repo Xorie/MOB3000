@@ -16,7 +16,32 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/firstName"
+        android:id="@+id/studentnr"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="@string/studentnr" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_height="36dp"
+        android:layout_width="match_parent"
+        android:text="@string/password"
+        android:inputType="textPassword"/>
+
+    <View
+        android:id="@+id/divider12"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/firstname"
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:text="@string/firstName" />
@@ -28,22 +53,10 @@
         android:background="?android:attr/listDivider" />
 
     <TextView
-        android:id="@+id/lastName"
+        android:id="@+id/lastname"
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:text="@string/lastName" />
-
-    <View
-        android:id="@+id/divider4"
-        android:layout_width="match_parent"
-        android:layout_height="12dp"
-        android:background="?android:attr/listDivider" />
-
-    <TextView
-        android:id="@+id/studentnr"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/studentnr" />
 
     <View
         android:id="@+id/divider6"

@@ -4,45 +4,32 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Registrering extends Activity {
+    //EditText Name, Pass , updateold, updatenew, delete;
+    TextView firstName, lastName, studentnr,school,campus,education,year,subject,link,password;
     myDbAdapter helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Name= (EditText) findViewById(R.id.editName);
-        Pass= (EditText) findViewById(R.id.editPass);
-        updateold= (EditText) findViewById(R.id.editText3);
-        updatenew= (EditText) findViewById(R.id.editText5);
-        delete = (EditText) findViewById(R.id.editText6);
+        firstName= (TextView) findViewById(R.id.firstname);
+        lastName= (TextView) findViewById(R.id.lastname);
+        studentnr= (TextView) findViewById(R.id.studentnr);
+        school= (TextView) findViewById(R.id.school);
+        campus= (TextView) findViewById(R.id.campus);
+        education= (TextView) findViewById(R.id.education);
+        year= (EditText) findViewById(R.id.year);
+        subject= (TextView) findViewById(R.id.subject);
+        link= (TextView) findViewById(R.id.link);
+        password= (TextView) findViewById(R.id.password);
 
         helper = new myDbAdapter(this);
     }
-    public void addUser(View view)
-    {
-        String t1 = Name.getText().toString();
-        String t2 = Pass.getText().toString();
-        if(t1.isEmpty() || t2.isEmpty())
-        {
-            Toast.makeText(this, "\"Enter Both Name and Password", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            long id = helper.insertData(t1,t2);
-            if(id<=0)
-            {
-                Toast.makeText(this, "Insertion Unsuccessful", Toast.LENGTH_SHORT).show();
-                Name.setText("");
-                Pass.setText("");
-            } else
-            {
-                Toast.makeText(this, "Insertion Successful", Toast.LENGTH_SHORT).show();
-                Name.setText("");
-                Pass.setText("");
-            }
-        }
+    public void addUser(View view){
+
     }
     public void viewdata(View view)
     {
