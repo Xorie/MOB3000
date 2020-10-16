@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,16 +13,16 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="156dp"
+        android:layout_height="133dp"
         android:contentDescription="logo"
         android:padding="50dp"
         app:srcCompat="@drawable/logo" />
 
-    <TextView
+    <EditText
         android:id="@+id/studentnr"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/studentnr" />
+        android:layout_height="40dp"
+        android:hint="@string/studentnr" />
 
     <View
         android:id="@+id/divider4"
@@ -27,12 +30,12 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <TextView
+    <EditText
         android:id="@+id/password"
-        android:layout_height="36dp"
         android:layout_width="match_parent"
-        android:text="@string/password"
-        android:inputType="textPassword"/>
+        android:layout_height="40dp"
+        android:inputType="textPassword"
+        android:hint="@string/password" />
 
     <View
         android:id="@+id/divider12"
@@ -40,11 +43,11 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <TextView
+    <EditText
         android:id="@+id/firstname"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/firstName" />
+        android:layout_height="40dp"
+        android:hint="@string/firstName" />
 
     <View
         android:id="@+id/divider5"
@@ -52,11 +55,11 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <TextView
+    <EditText
         android:id="@+id/lastname"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/lastName" />
+        android:layout_height="40dp"
+        android:hint="@string/lastName" />
 
     <View
         android:id="@+id/divider6"
@@ -64,11 +67,11 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <TextView
+    <EditText
         android:id="@+id/school"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/school" />
+        android:hint="@string/school" />
 
     <View
         android:id="@+id/divider11"
@@ -76,11 +79,11 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <TextView
+    <EditText
         android:id="@+id/campus"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/campus" />
+        android:layout_height="40dp"
+        android:hint="@string/campus" />
 
     <View
         android:id="@+id/divider8"
@@ -88,11 +91,11 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <TextView
+    <EditText
         android:id="@+id/education"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/education" />
+        android:layout_height="40dp"
+        android:hint="@string/education" />
 
     <View
         android:id="@+id/divider9"
@@ -103,8 +106,9 @@
     <EditText
         android:id="@+id/year"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:ems="10"
+        android:hint="@string/year"
         android:inputType="number" />
 
     <View
@@ -113,28 +117,16 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <TextView
+    <EditText
         android:id="@+id/subject"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/subject" />
+        android:layout_height="40dp"
+        android:hint="@string/subject" />
 
     <View
         android:id="@+id/divider7"
         android:layout_width="match_parent"
         android:layout_height="12dp"
-        android:background="?android:attr/listDivider" />
-
-    <TextView
-        android:id="@+id/link"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:text="@string/link" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
         android:background="?android:attr/listDivider" />
 
     <Button
@@ -157,7 +149,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
         android:text="@string/reg"
-        android:textColor="@color/colorText" />
+        android:textColor="@color/colorText"
+        android:onClick="onClickSave"/>
 
     <View
         android:id="@+id/divider3"
@@ -172,14 +165,5 @@
         android:layout_height="35dp"
         android:background="@color/colorProcessbar" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
 </LinearLayout>
+</ScrollView>

@@ -37,20 +37,19 @@
         app:layout_constraintVertical_bias="0.003" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="100dp"
+        android:id="@+id/btnlogin"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="48dp"
-        android:enabled="false"
-        android:text="@string/action_sign_in"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:layout_marginTop="24dp"
         android:background="@color/colorButton"
+        android:onClick="login"
+        android:text="@string/action_sign_in"
         android:textColor="@color/colorText"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -85,18 +84,19 @@
 
     <Button
         android:id="@+id/registration"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:background="@color/colorButton"
+        android:onClick="getSecond"
         android:text="@string/registration"
+        android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.106"
-        android:background="@color/colorButton"
-        android:textColor="@color/colorText"
-        />
+        app:layout_constraintVertical_bias="0.143" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -124,5 +124,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:layout_constraintVertical_bias="0.005" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="getThird"
+        android:text="Brukerprofil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

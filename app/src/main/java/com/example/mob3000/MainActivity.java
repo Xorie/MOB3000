@@ -1,94 +1,67 @@
 package com.example.mob3000;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    private Registrering reg;
-    private Button btnlogin, btnreg;
-    private EditText etName, etPass;
+import java.util.ArrayList;
+import java.util.List;
 
-    Registrering reg_bruker = new Registrering();
+public class MainActivity extends AppCompatActivity {
+    EditText username, password;
+    private RecyclerView recView;
+    private DataAdapter mDb;
+    private Student student;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // The activity is being created.
+        setContentView(R.layout.activity_main);
     }
 
 
-    //sharedpref
-    private SharedPreferences mSharedpref;
-    private String sharedPrfFilename = "com.example.sharedprefclass";
-
-    //konstrultør
-    public MainActivity(Registrering reg, Button btnlogin, Button btnreg, EditText etName, EditText etPass) {
-        this.reg = reg;
-        this.btnlogin = btnlogin;
-        this.btnreg = btnreg;
-        this.etName = etName;
-        this.etPass = etPass;
-    }
+    public void login(View view) {
+        Toast.makeText(this, "Hei", Toast.LENGTH_SHORT).show();
+        Editable name_key;
+        String curPass;
+        name_key = username.getText();
+        curPass = password.getText().toString();
 
 
-    public MainActivity(int contentLayoutId, Registrering reg, Button btnlogin, Button btnreg, EditText etName, EditText etPass) {
-        super(contentLayoutId);
-        this.reg = reg;
-        this.btnlogin = btnlogin;
-        this.btnreg = btnreg;
-        this.etName = etName;
-        this.etPass = etPass;
-    }
+        String name_stored = student.getSid();
+        String pass_stored = student.getPassword();
+        Toast.makeText(this, "HALLA", Toast.LENGTH_SHORT).show();
 
-
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.login:
-                String name_key, pass_key, curPass;
-                name_key = etName.getText().toString();
-                curPass = etPass.getText().toString();
-                pass_key = name_key + "pass";
-
-                String name_stored = mSharedpref.getString(name_key, "Brukernavn ikke funnet");
-                String pass_stored = mSharedpref.getString(pass_key, "Passord ikke funnet");
-                //if test for å sjekke feltene
-                if (!name_key.equals(name_stored)) {
-                    Toast.makeText(this, "Brukernavn er feil", Toast.LENGTH_LONG).show();
-                } else if (!curPass.equals(pass_stored)) {
-                    Toast.makeText(this, "Passordet er feil", Toast.LENGTH_LONG).show();
-                } else if (name_key.equals(name_stored) && curPass.equals(pass_stored)) {
-                    Toast.makeText(this, "Du kan logge inn", Toast.LENGTH_LONG).show();
-                }
-                break;
-            case R.id.registration:
-                reg_bruker.addUser(View view);
-                break;
+        //if test for å sjekke feltene
+        if (!name_key.equals(name_stored)) {
+            Toast.makeText(this, "Brukernavn er feil", Toast.LENGTH_LONG).show();
+        } else if (!curPass.equals(pass_stored)) {
+            Toast.makeText(this, "Passordet er feil", Toast.LENGTH_LONG).show();
+        } else if (name_key.equals(name_stored) && curPass.equals(pass_stored)) {
+            Toast.makeText(this, "Velkommen " + name_key, Toast.LENGTH_LONG).show();
         }
-
-/*
-        public void onLogin (View view){
-            String name_key, pass_key, curPass;
-            name_key = etName.getText().toString();
-            curPass = etPass.getText().toString();
-            pass_key = name_key + "pass";
-
-            String name_stored = mSharedpref.getString(name_key, "Name not found");
-            String pass_stored = mSharedpref.getString(pass_key, "Password not found");
-
-            if (!name_key.equals(name_stored)) {
-                Toast.makeText(this, "Name is wrong", Toast.LENGTH_LONG).show();
-            } else if (!curPass.equals(pass_stored)) {
-                Toast.makeText(this, "Password is wrong", Toast.LENGTH_LONG).show();
-            } else if (name_key.equals(name_stored) && curPass.equals(pass_stored)) {
-                Toast.makeText(this, "You can login", Toast.LENGTH_LONG).show();
-
-            }
-
-        }*/
     }
+
+    //for å gå til registering
+    public void getSecond(View view) {
+        Toast.makeText(this,"Hello",Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this, Registrering.class);
+        startActivity(intent);
+    }
+    public void getThird(View view) {
+        Toast.makeText(this,"Hei der!",Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this, BrukerProfil.class);
+        startActivity(intent);
+    }
+}
+
+
