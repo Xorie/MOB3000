@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="match_parent"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Registrering">
+    tools:context=".Registrering"
+    android:background="@drawable/background">
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="133dp"
+        android:layout_height="wrap_content"
         android:contentDescription="logo"
         android:padding="50dp"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo5" />
 
     <EditText
         android:id="@+id/studentnr"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:selectAllOnFocus="true"
+        android:background="@color/colorText"
         android:hint="@string/studentnr" />
 
     <View
@@ -36,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:inputType="textPassword"
+        android:background="@color/colorText"
         android:hint="@string/password" />
 
     <View
@@ -48,6 +51,7 @@
         android:id="@+id/firstname"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:background="@color/colorText"
         android:hint="@string/firstName" />
 
     <View
@@ -60,6 +64,7 @@
         android:id="@+id/lastname"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:background="@color/colorText"
         android:hint="@string/lastName" />
 
     <View
@@ -71,7 +76,8 @@
     <EditText
         android:id="@+id/school"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/colorText"
         android:hint="@string/school" />
 
     <View
@@ -84,22 +90,11 @@
         android:id="@+id/campus"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:background="@color/colorText"
         android:hint="@string/campus" />
 
     <View
         android:id="@+id/divider8"
-        android:layout_width="match_parent"
-        android:layout_height="12dp"
-        android:background="?android:attr/listDivider" />
-
-    <EditText
-        android:id="@+id/education"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="@string/education" />
-
-    <View
-        android:id="@+id/divider9"
         android:layout_width="match_parent"
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
@@ -110,7 +105,8 @@
         android:layout_height="40dp"
         android:ems="10"
         android:hint="@string/year"
-        android:inputType="number" />
+        android:inputType="number"
+        android:background="@color/colorText"/>
 
     <View
         android:id="@+id/divider10"
@@ -122,7 +118,8 @@
         android:id="@+id/subject"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:hint="@string/subject" />
+        android:hint="@string/subject"
+        android:background="@color/colorText"/>
 
     <View
         android:id="@+id/divider7"
@@ -130,20 +127,12 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <Button
-        android:id="@+id/userPic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/userPic"
-        android:background="@color/colorButton2"
-        android:textColor="@color/colorText"
-        android:textAllCaps="false"/>
-
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="?android:attr/listDivider" />
+        android:background="?android:attr/listDivider"
+        />
 
     <Button
         android:id="@+id/reg"
@@ -161,12 +150,13 @@
         android:layout_height="20dp"
         android:background="?android:attr/listDivider" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
+    <Button
+        android:id="@+id/backbtn"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@color/colorProcessbar" />
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:background="@color/colorButton"
+        android:textColor="@color/colorText"/>
 
 </LinearLayout>
 </ScrollView>

@@ -36,4 +36,6 @@
     <string name="overskrift5">Fag der bruker ønsker gruppe:</string>
     <string name="overskrift6">Årskull:</string>
     <string name="logout">Logg ut</string>
+    <string name="back">Tilbake</string>
+    <string name="delete">Slett bruker</string>
 </resources>

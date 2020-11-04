@@ -5,28 +5,29 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:textSize="17sp" >
+    android:background="@drawable/background"
+    android:textSize="17sp"
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/username"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="68dp"
         android:hint="@string/prompt_email"
         android:inputType="text"
         android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481"
+        android:background="@color/colorText"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="84dp"
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
@@ -34,8 +35,10 @@
         android:selectAllOnFocus="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.003" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.602"
+        android:background="@color/colorText"/>
 
     <Button
         android:id="@+id/buttonLogin"
@@ -44,72 +47,69 @@
         android:layout_gravity="start"
         android:layout_marginTop="24dp"
         android:background="@color/colorButton"
-        android:text="@string/action_sign_in"
         android:onClick="login"
+        android:text="@string/action_sign_in"
+        android:textAllCaps="false"
         android:textColor="@color/colorText"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        android:textAllCaps="false"/>
+        app:layout_constraintVertical_bias="0.03" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/studentbay4"
+        android:contentDescription="TODO"
+        android:src="@drawable/logo5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421"
-        android:contentDescription="TODO" />
+        app:layout_constraintVertical_bias="0.273" />
 
     <Button
         android:id="@+id/registration"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="180dp"
         android:background="@color/colorButton"
         android:onClick="getSecond"
         android:text="@string/registration"
+        android:textAllCaps="false"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintVertical_bias="0.143"
-        android:textAllCaps="false"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.816" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="46dp"
         android:layout_height="50dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="328dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
         android:src="@drawable/bruker"
         app:layout_constraintEnd_toStartOf="@+id/username"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-       />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="46dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="2dp"
+        android:layout_marginBottom="276dp"
         android:src="@drawable/laas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/password"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button5"
