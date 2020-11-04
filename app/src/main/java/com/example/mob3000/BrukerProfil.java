@@ -30,7 +30,7 @@ public class BrukerProfil extends AppCompatActivity {
                     if (mAdapter.getItemCount()>=1){
                         //int position=0;
                         List<Student> studentList = mAdapter.getData();
-                        mDb.StudentDao().deleteStudent(studentList.get(position));
+                        mDb.getStudentDao().deleteStudent(studentList.get(position));
                         showListData();
                     }
                 }
@@ -69,7 +69,7 @@ public class BrukerProfil extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-                final List<Student> studentList = mDb.StudentDao().loadAllStudent();
+                final List<Student> studentList = mDb.getStudentDao().loadAllStudent();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

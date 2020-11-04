@@ -22,6 +22,7 @@
         android:id="@+id/studentnr"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:selectAllOnFocus="true"
         android:hint="@string/studentnr" />
 
     <View
@@ -135,7 +136,8 @@
         android:layout_height="wrap_content"
         android:text="@string/userPic"
         android:background="@color/colorButton2"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorText"
+        android:textAllCaps="false"/>
 
     <View
         android:id="@+id/divider2"
@@ -150,7 +152,8 @@
         android:background="@color/colorButton"
         android:text="@string/reg"
         android:textColor="@color/colorText"
-        android:onClick="onClickSave"/>
+        android:onClick="onClickSave"
+        android:textAllCaps="false"/>
 
     <View
         android:id="@+id/divider3"

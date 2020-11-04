@@ -16,6 +16,9 @@
         <activity android:name=".BrukerProfil"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".OmAppen"
+            android:parentActivityName=".MainActivity">
+        </activity>
 
         <activity android:name=".MainActivity">
             <intent-filter>

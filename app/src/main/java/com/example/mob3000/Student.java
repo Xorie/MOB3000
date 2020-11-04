@@ -2,51 +2,43 @@ package com.example.mob3000;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-@Entity(tableName = "Student")
-        /*foreignKeys = @ForeignKey(entity = School.class,
-        parentColumns = "uid",
-        childColumns = "schoolid"))*/
+import androidx.room.Relation;
 
-public class Student {
-    //private School school = new School(uid,schoolname,campus);
-    @ColumnInfo
+import java.io.Serializable;
+import java.util.List;
+
+@Entity(tableName = "Student")
+public class Student implements Serializable {
+    @ColumnInfo(name = "sid")
     @PrimaryKey
     @NonNull
-    String sid;
+    private String sid;
 
-    @ColumnInfo
-    String password;
+    @ColumnInfo (name = "password")
+    private String password;
 
-    @ColumnInfo
-    String firstname;
+    @ColumnInfo (name = "firstname")
+    private String firstname;
 
-    @ColumnInfo
-    String lastname;
+    @ColumnInfo(name = "lastname")
+    private String lastname;
+
+    @ColumnInfo (name = "schoolid")
+    private String schoolid;
+
+    @ColumnInfo (name = "subject")
+    private String subject;
+
+    @ColumnInfo (name ="year")
+    private String year;
 
 
-    @ColumnInfo
-    int schoolid;
-
-    @ColumnInfo
-    String subject;
-
-    @ColumnInfo
-    String year;
-
-    public Student(String sid, String password, String firstname, String lastname,
-                   int schoolid, String subject, String year) {
-        this.sid = sid;
-        this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.schoolid = schoolid;
-        this.subject = subject;
-        this.year = year;
-    }
-
+    //gettere
     public String getSid() {
         return sid;
     }
@@ -63,8 +55,7 @@ public class Student {
         return lastname;
     }
 
-
-    public int getSchoolid() {
+    public String getSchoolid() {
         return schoolid;
     }
 
@@ -74,6 +65,34 @@ public class Student {
 
     public String getYear() {
         return year;
+    }
+
+    public void setSid(@NonNull String sid) {
+        this.sid = sid;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setSchoolid(String schoolid) {
+        this.schoolid = schoolid;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     @Override
@@ -89,3 +108,5 @@ public class Student {
                 '}';
     }
 }
+
+

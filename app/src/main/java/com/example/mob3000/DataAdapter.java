@@ -27,6 +27,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.StudentViewHol
     class StudentViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable for any view that will be set as you render a row
         TextView edStudentnr;
+        TextView edPassword;
         TextView edFirstname;
         TextView edLastname;
         TextView edSchool;
@@ -37,6 +38,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.StudentViewHol
             super(itemView);
             // Viewholder gets the handles for each view items in a row
             edStudentnr = (TextView) itemView.findViewById(R.id.txtStudentnr);
+            edPassword = (TextView) itemView.findViewById(R.id.txtPassword);
             edFirstname = (TextView) itemView.findViewById(R.id.txtFirstname);
             edLastname = (TextView) itemView.findViewById(R.id.txtLastname);
             edSchool = (TextView) itemView.findViewById(R.id.txtSchool);
@@ -66,9 +68,10 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.StudentViewHol
         Student currentStudent = mStudent.get(position);
         //  show the data in the views
         holder.edStudentnr.setText(currentStudent.getSid());
+        holder.edPassword.setText(currentStudent.getPassword());
         holder.edFirstname.setText(currentStudent.getFirstname());
         holder.edLastname.setText(currentStudent.getLastname());
-        holder.edSchool.setText(Integer.toString(currentStudent.getSchoolid()));
+        holder.edSchool.setText(currentStudent.getSchoolid());
         holder.edSubject.setText(currentStudent.getSubject());
         holder.edYear.setText(currentStudent.getYear());
     }

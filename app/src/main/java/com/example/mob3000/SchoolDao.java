@@ -10,7 +10,6 @@ import java.util.List;
 @Dao
 public interface SchoolDao {
     @Query("Select * from School ")
-        // public Drink getalldrinks()
     List<School> loadAllSchool();
 
     @Insert

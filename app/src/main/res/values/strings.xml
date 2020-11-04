@@ -21,9 +21,11 @@
     <string name="userPic">Last opp bilde</string>
     <string name="reg">Lagre</string>
     <string name="name">Navn</string>
-    <string name="sokefelt">Søkefelt..</string>
-    <string name="om_appen">Om appen...</string>
-    <string name="konto">Konto</string>
+    <string name="search">Søkefelt..</string>
+    <string name="about">Studentbay er en app av studenter for studenter. Her skal
+    det være enkelt og lettvidt å finne andre studenter som trenger gruppe
+    for oppgaver, eksamen eller kollokviegruppe</string>
+    <string name="account">Brukerprofil</string>
     <string name="studentnr">Studentnr</string>
     <string name="password">Passord</string>
     <string name="school">Skolenavn</string>
@@ -33,4 +35,5 @@
     <string name="overskrift4">Skolenavn:</string>
     <string name="overskrift5">Fag der bruker ønsker gruppe:</string>
     <string name="overskrift6">Årskull:</string>
+    <string name="logout">Logg ut</string>
 </resources>
