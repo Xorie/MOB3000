@@ -54,7 +54,7 @@ public class BrukerProfil extends AppCompatActivity {
 
         //********************* Adapter***********
         mAdapter = new DataAdapter(this);
-        //atttach adatper to rec view
+        //attach adapter to rec view
         recView.setAdapter(mAdapter);
         mAdapter.setCustomItemClickListener(onItemClickListener);
     }

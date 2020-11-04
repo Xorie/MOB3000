@@ -16,8 +16,12 @@ public interface  StudentDao {
     List<Student> loadAllStudent();
 
     //henter studentinformasjon
+    @Query("Select * from Student Where sid = (:username) AND password = (:password)")
+    Student login(String username, String password);
+
+    /*henter studentinformasjon
     @Query("Select * from Student Where sid = (:username) And password = (:password)")
-   Student login(String username, String password);
+   Student login(String username, String password);*/
 
     @Insert
     void insertStudent(Student student);

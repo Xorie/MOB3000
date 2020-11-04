@@ -1,5 +1,6 @@
 package com.example.mob3000;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,27 +31,35 @@ public class Registrering extends AppCompatActivity {
 
 
     public void onClickSave(View view) {
-        final Student student1 = new Student();
-                student1.setSid(studentnr.getText().toString());
-                student1.setPassword(password.getText().toString());
-                student1.setFirstname(firstName.getText().toString());
-                student1.setLastname(lastName.getText().toString());
-                student1.setSchoolid(school.getText().toString());
-                student1.setYear(year.getText().toString());
-                student1.setSubject(subject.getText().toString());
+        final String studpass = password.getText().toString();
+        try {
+            String kryptering = Kryptering.encrypt(studpass);
+            final Student student1 = new Student();
+            student1.setSid(studentnr.getText().toString());
+            student1.setPassword(kryptering);
+            student1.setFirstname(firstName.getText().toString());
+            student1.setLastname(lastName.getText().toString());
+            student1.setSchoolid(school.getText().toString());
+            student1.setYear(year.getText().toString());
+            student1.setSubject(subject.getText().toString());
 
-        if(validateInput(student1)){
-            db = MyDatabase.getDatabase(getApplicationContext());
-            sdao = db.getStudentDao();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    sdao.insertStudent(student1);
-                }
-            }).start();
-        }
-        else {
-            Toast.makeText(getApplicationContext(), "Fyll alle feltene!", Toast.LENGTH_LONG).show();
+            if(validateInput(student1)){
+                db = MyDatabase.getDatabase(getApplicationContext());
+                sdao = db.getStudentDao();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        sdao.insertStudent(student1);
+                    }
+                }).start();
+                Intent intent = new Intent(Registrering.this, MainActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Fyll alle feltene!", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
