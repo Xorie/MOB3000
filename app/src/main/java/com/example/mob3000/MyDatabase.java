@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Student.class, School.class}, version=2)
+@Database(entities = {Student.class}, version=3)
 public abstract class MyDatabase  extends RoomDatabase {
 
     // Database name to be used
@@ -17,7 +17,6 @@ public abstract class MyDatabase  extends RoomDatabase {
     // **********//
     // Declare your data access objects *DAO* as abstract
     public abstract StudentDao getStudentDao();
-    public abstract SchoolDao getSchoolDao();
     // **********//
 
     static MyDatabase getDatabase(final Context context) {

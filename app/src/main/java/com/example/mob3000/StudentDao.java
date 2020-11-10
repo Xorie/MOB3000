@@ -19,9 +19,8 @@ public interface  StudentDao {
     @Query("Select * from Student Where sid = (:username) AND password = (:password)")
     Student login(String username, String password);
 
-    /*henter studentinformasjon
-    @Query("Select * from Student Where sid = (:username) And password = (:password)")
-   Student login(String username, String password);*/
+    @Query("Select * from Student Where subject = (:subject)")
+    List<Student> sok(String subject);
 
     @Insert
     void insertStudent(Student student);

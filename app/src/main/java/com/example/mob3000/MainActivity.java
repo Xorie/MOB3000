@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Du må fylle inn alle feltene!", Toast.LENGTH_LONG).show();
         } else {
             //fra databasen
-            StudentDao studentdao;
             MyDatabase database = MyDatabase.getDatabase(getApplicationContext());
             final StudentDao sdao = database.getStudentDao();
             new Thread(new Runnable() {
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     try {
                         String studpass = Kryptering.encrypt(password2);
-                        System.out.println("Kryptering av input:"+studpass);
                         Student studpassdb = sdao.login(id,studpass);
                         if (studpassdb == null) {
                             runOnUiThread(new Runnable() {
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void getThird (View view){
-            Intent intent = new Intent(MainActivity.this, BrukerProfil.class);
+            Intent intent = new Intent(this, BrukerProfil.class);
             startActivity(intent);
         }
     }

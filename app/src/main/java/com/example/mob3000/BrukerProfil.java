@@ -30,7 +30,6 @@ public class BrukerProfil extends AppCompatActivity {
                     if (mAdapter.getItemCount()>=1){
                         //int position=0;
                         List<Student> studentList = mAdapter.getData();
-                        mDb.getStudentDao().deleteStudent(studentList.get(position));
                         showListData();
                     }
                 }

@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.StudentViewHolder> {
+public class SearchDataAdapter extends RecyclerView.Adapter<SearchDataAdapter.SearchViewHolder> {
 
     /***************** First member variables and the constructor *********/
     private List<Student> mStudent;
@@ -18,30 +19,24 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.StudentViewHol
     View.OnClickListener mOnItemClickListener;
 
 
-    public DataAdapter(Context cont) {
+    public SearchDataAdapter(Context cont) {
         this.context = cont;
     }
 
-
-    /************************ Second the view holder ************************/
-    class StudentViewHolder extends RecyclerView.ViewHolder {
+    class SearchViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable for any view that will be set as you render a row
-        TextView edStudentnr;
         TextView edFirstname;
         TextView edLastname;
         TextView edCampus;
         TextView edSubject;
-        TextView edYear;
 
-        public StudentViewHolder(View itemView) {
+        public SearchViewHolder(View itemView) {
             super(itemView);
             // Viewholder gets the handles for each view items in a row
-            edStudentnr = (TextView) itemView.findViewById(R.id.txtStudentnr);
-            edFirstname = (TextView) itemView.findViewById(R.id.txtFirstname);
-            edLastname = (TextView) itemView.findViewById(R.id.txtLastname);
-            edCampus = (TextView) itemView.findViewById(R.id.txtCampus);
-            edSubject = (TextView) itemView.findViewById(R.id.txtSubject);
-            edYear = (TextView) itemView.findViewById(R.id.txtYear);
+            edFirstname = (TextView) itemView.findViewById(R.id.srFirstname);
+            edLastname = (TextView) itemView.findViewById(R.id.srLastname);
+            edCampus = (TextView) itemView.findViewById(R.id.srSchool);
+            edSubject = (TextView) itemView.findViewById(R.id.srSubject);
 
 
             // for onCLicklistener
@@ -50,28 +45,22 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.StudentViewHol
         }
     }
 
-        /***************** Third, the implementation methods*/
-
-    public StudentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-
-        View row_view = inflater.inflate(R.layout.row_studentlayout, parent, false);
-        StudentViewHolder studentviewholder = new StudentViewHolder(row_view);
-        return studentviewholder;
+        View row_view2 = inflater.inflate(R.layout.row_searchlayout, parent, false);
+        SearchViewHolder searchviewholder = new SearchViewHolder(row_view2);
+        return searchviewholder;
     }
 
-
-    public void onBindViewHolder(StudentViewHolder holder, int position) {
+    public void onBindViewHolder(SearchViewHolder holder, int position) {
 
         Student currentStudent = mStudent.get(position);
         //  show the data in the views
-        holder.edStudentnr.setText(currentStudent.getSid());
         holder.edFirstname.setText(currentStudent.getFirstname());
         holder.edLastname.setText(currentStudent.getLastname());
         holder.edCampus.setText(currentStudent.getCampus());
         holder.edSubject.setText(currentStudent.getSubject());
-        holder.edYear.setText(currentStudent.getYear());
     }
 
     /**Returns the total number of items in the data set held by the adapter. */
@@ -92,8 +81,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.StudentViewHol
         return mStudent;
     }
 
-    public void setCustomItemClickListener(View.OnClickListener itemClickListener){
+    public void setCustomItemClickListener(View.OnClickListener itemClickListener) {
         mOnItemClickListener = itemClickListener;
     }
 }
-

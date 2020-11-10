@@ -28,8 +28,8 @@ public class Student implements Serializable {
     @ColumnInfo(name = "lastname")
     private String lastname;
 
-    @ColumnInfo (name = "schoolid")
-    private String schoolid;
+    @ColumnInfo (name = "campus")
+    private String campus;
 
     @ColumnInfo (name = "subject")
     private String subject;
@@ -55,8 +55,8 @@ public class Student implements Serializable {
         return lastname;
     }
 
-    public String getSchoolid() {
-        return schoolid;
+    public String getCampus() {
+        return campus;
     }
 
     public String getSubject() {
@@ -83,8 +83,8 @@ public class Student implements Serializable {
         this.lastname = lastname;
     }
 
-    public void setSchoolid(String schoolid) {
-        this.schoolid = schoolid;
+    public void setCampus(String campus) {
+        this.campus = campus;
     }
 
     public void setSubject(String subject) {
@@ -102,7 +102,7 @@ public class Student implements Serializable {
                 ", password='" + password + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", schoolid=" + schoolid +
+                ", schoolid=" + campus +
                 ", subject='" + subject + '\'' +
                 ", year=" + year +
                 '}';

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".BrukerProfil">
 
     <Button
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
-        android:background="@color/colorButton"
+        android:background="@color/colorYellow"
         android:text="Endre"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"

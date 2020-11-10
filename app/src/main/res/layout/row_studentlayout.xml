@@ -4,200 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    android:textSize="17sp"
-    android:background="@drawable/background">
+    android:textSize="17sp">
 
-    <ScrollView
+    <View
+        android:id="@+id/divider13"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/overskrift1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overskrift1"
+        android:textColor="@color/colorText" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/logo5" />
+    <TextView
+        android:id="@+id/txtStudentnr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorText" />
 
-            <View
-                android:id="@+id/divider13"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
-
-            <TextView
-                android:id="@+id/txtStudentnr"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:background="@color/colorText"/>
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
-
-            <TextView
-                android:id="@+id/txtPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:background="@color/colorText"/>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
 
-            <TextView
-                android:id="@+id/overskrift2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/overskrift2"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/overskrift2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overskrift2"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/txtFirstname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/txtFirstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorText" />
 
-            <View
-                android:id="@+id/divider14"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
+    <View
+        android:id="@+id/divider14"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
-            <TextView
-                android:id="@+id/overskrift3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/overskrift3"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/overskrift3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overskrift3"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/txtLastname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/txtLastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorText" />
 
-            <View
-                android:id="@+id/divider15"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
+    <View
+        android:id="@+id/divider15"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
-            <TextView
-                android:id="@+id/overskrift4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/overskrift4"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/overskrift4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overskrift4"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/txtSchool"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/txtCampus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorText" />
 
-            <View
-                android:id="@+id/divider17"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
+    <View
+        android:id="@+id/divider17"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
-            <TextView
-                android:id="@+id/overskrift5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/overskrift5"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/overskrift5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overskrift5"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/txtSubject"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/txtSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorText" />
 
-            <View
-                android:id="@+id/divider16"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
+    <View
+        android:id="@+id/divider16"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
-            <TextView
-                android:id="@+id/overskrift6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/overskrift6"
-                android:background="@color/colorText"/>
+    <TextView
+        android:id="@+id/overskrift6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overskrift6"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/txtYear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorText"
-                android:text="TextView" />
+    <TextView
+        android:id="@+id/txtYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorText" />
 
-            <View
-                android:id="@+id/divider19"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/back"
-                android:background="@color/colorButton"
-                android:textColor="@color/colorText"
-                />
-
-            <View
-                android:id="@+id/divider18"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorRed"
-                android:textColor="@color/colorText"
-                android:text="@string/delete" />
-
-        </LinearLayout>
-    </ScrollView>
+    <View
+        android:id="@+id/divider19"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
 </LinearLayout>

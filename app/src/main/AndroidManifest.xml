@@ -19,6 +19,9 @@
         <activity android:name=".OmAppen"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".SokeResultater"
+            android:parentActivityName=".MainActivity">
+        </activity>
 
         <activity android:name=".MainActivity">
             <intent-filter>
