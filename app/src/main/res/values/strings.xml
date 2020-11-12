@@ -35,9 +35,30 @@
     <string name="overskrift4">Skolenavn:</string>
     <string name="overskrift5">Fag der bruker ønsker gruppe:</string>
     <string name="overskrift6">Årskull:</string>
+    <string name="edit">Endre</string>
     <string name="logout">Logg ut</string>
     <string name="back">Tilbake</string>
     <string name="delete">Slett bruker</string>
-    <string name="sok">Søk</string>
-    <string name="searchresults">Søkeresultater:</string>
+
+
+    <string-array name="course_list">
+        <item>Liste over emner</item>
+        <item>MOB3000</item>
+        <item>APP2000</item>
+        <item>AI3000</item>
+        <item>DAT2000</item>
+        <item>PRG1100</item>
+    </string-array>
+
+    <string-array name="group_list">
+        <item>Liste over grupper</item>
+        <item>Gruppe 1</item>
+        <item>Gruppe 2</item>
+        <item>Gruppe 3</item>
+        <item>Gruppe 4</item>
+        <item>Gruppe 5</item>
+    </string-array>
+
+    <string name="notificationNum">1</string>
+    <string name="invite">Inviter</string>
 </resources>

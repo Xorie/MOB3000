@@ -9,4 +9,5 @@
     <color name="colorProcessbar">#FFBB16</color>
     <color name="colorButton2">#FFFFFF</color>
     <color name="colorRed">#FF0000</color>
+    <color name="notification"></color>
 </resources>

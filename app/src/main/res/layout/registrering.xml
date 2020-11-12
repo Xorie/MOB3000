@@ -73,10 +73,25 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <Spinner
+    <EditText
+        android:id="@+id/school"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorText"
+        android:hint="@string/school" />
+
+    <View
+        android:id="@+id/divider11"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="?android:attr/listDivider" />
+
+    <EditText
         android:id="@+id/campus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="40dp"
+        android:background="@color/colorText"
+        android:hint="@string/campus" />
 
     <View
         android:id="@+id/divider8"
@@ -123,7 +138,7 @@
         android:id="@+id/reg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorYellow"
+        android:background="@color/colorOrange"
         android:text="@string/reg"
         android:textColor="@color/colorText"
         android:onClick="onClickSave"
@@ -140,7 +155,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/back"
-        android:background="@color/colorYellow"
+        android:background="@color/colorOrange"
         android:textColor="@color/colorText"/>
 
 </LinearLayout>
