@@ -15,7 +15,7 @@
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/logo"
+        android:contentDescription="logo"
         android:padding="50dp"
         app:srcCompat="@drawable/logo5" />
 
@@ -25,9 +25,7 @@
         android:layout_height="40dp"
         android:selectAllOnFocus="true"
         android:background="@color/colorText"
-        android:hint="@string/studentnr"
-        android:inputType="number"
-        android:autofillHints="@string/studentnr"/>
+        android:hint="@string/studentnr" />
 
     <View
         android:id="@+id/divider4"
@@ -41,8 +39,7 @@
         android:layout_height="40dp"
         android:inputType="textPassword"
         android:background="@color/colorText"
-        android:hint="@string/password"
-        android:autofillHints="@string/password"/>
+        android:hint="@string/password" />
 
     <View
         android:id="@+id/divider12"
@@ -55,9 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorText"
-        android:hint="@string/firstName"
-        android:inputType="text"
-        android:autofillHints="@string/firstName"/>
+        android:hint="@string/firstName" />
 
     <View
         android:id="@+id/divider5"
@@ -70,9 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorText"
-        android:hint="@string/lastName"
-        android:inputType="text"
-        android:autofillHints="@string/lastName"/>
+        android:hint="@string/lastName" />
 
     <View
         android:id="@+id/divider6"
@@ -80,12 +73,25 @@
         android:layout_height="12dp"
         android:background="?android:attr/listDivider" />
 
-    <Spinner
+    <EditText
+        android:id="@+id/school"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorText"
+        android:hint="@string/school" />
+
+    <View
+        android:id="@+id/divider11"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="?android:attr/listDivider" />
+
+    <EditText
         android:id="@+id/campus"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/colorOrange"
-        />
+        android:background="@color/colorText"
+        android:hint="@string/campus" />
 
     <View
         android:id="@+id/divider8"
@@ -100,8 +106,7 @@
         android:ems="10"
         android:hint="@string/year"
         android:inputType="number"
-        android:background="@color/colorText"
-        android:autofillHints="@string/year"/>
+        android:background="@color/colorText"/>
 
     <View
         android:id="@+id/divider10"
@@ -114,9 +119,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:hint="@string/subject"
-        android:background="@color/colorText"
-        android:inputType="text"
-        android:autofillHints="@string/subject"/>
+        android:background="@color/colorText"/>
 
     <View
         android:id="@+id/divider7"
@@ -135,7 +138,7 @@
         android:id="@+id/reg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorYellow"
+        android:background="@color/colorOrange"
         android:text="@string/reg"
         android:textColor="@color/colorText"
         android:onClick="onClickSave"

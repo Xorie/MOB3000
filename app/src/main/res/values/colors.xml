@@ -9,8 +9,5 @@
     <color name="colorProcessbar">#FFBB16</color>
     <color name="colorButton2">#FFFFFF</color>
     <color name="colorRed">#FF0000</color>
-
-    <!-- for night mode -->
-    <color name="backgroundColorNight">#212121</color>
-    <color name="txtcolorNight">#FFFFFF</color>
+    <color name="notification"></color>
 </resources>

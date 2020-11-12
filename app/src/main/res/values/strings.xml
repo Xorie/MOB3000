@@ -15,7 +15,7 @@
     <string name="campus">Campus</string>
     <string name="year">Årskull</string>
     <string name="education">Utdanning</string>
-    <string name="subject">Fagkode</string>
+    <string name="subject">Fag</string>
     <string name="bio">Biografi</string>
     <string name="link">Lik til sosiale medier</string>
     <string name="userPic">Last opp bilde</string>
@@ -32,15 +32,33 @@
     <string name="overskrift1">Studentnr:</string>
     <string name="overskrift2">Fornavn:</string>
     <string name="overskrift3">Etternavn:</string>
-    <string name="overskrift4">Campus:</string>
+    <string name="overskrift4">Skolenavn:</string>
     <string name="overskrift5">Fag der bruker ønsker gruppe:</string>
     <string name="overskrift6">Årskull:</string>
+    <string name="edit">Endre</string>
     <string name="logout">Logg ut</string>
     <string name="back">Tilbake</string>
     <string name="delete">Slett bruker</string>
-    <string name="sok">Søk</string>
-    <string name="searchresults">Søkeresultater:</string>
-    <string name="logo">Logo</string>
-    <string name="passwordIcon">Passordsikon</string>
-    <string name="usernameIcon">Brukernavnikon</string>
+
+
+    <string-array name="course_list">
+        <item>Liste over emner</item>
+        <item>MOB3000</item>
+        <item>APP2000</item>
+        <item>AI3000</item>
+        <item>DAT2000</item>
+        <item>PRG1100</item>
+    </string-array>
+
+    <string-array name="group_list">
+        <item>Liste over grupper</item>
+        <item>Gruppe 1</item>
+        <item>Gruppe 2</item>
+        <item>Gruppe 3</item>
+        <item>Gruppe 4</item>
+        <item>Gruppe 5</item>
+    </string-array>
+
+    <string name="notificationNum">1</string>
+    <string name="invite">Inviter</string>
 </resources>

@@ -7,7 +7,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {Student.class}, version=3)
-public abstract class MyDatabase  extends RoomDatabase {
+
+public abstract class MyDatabase extends RoomDatabase {
 
     // Database name to be used
     public static final String DBNAME = "Studentbay";
@@ -29,6 +30,7 @@ public abstract class MyDatabase  extends RoomDatabase {
                             // Migration is not part of this practical.
                             .fallbackToDestructiveMigration()
                             .build();
+
                 }
             }
         }
