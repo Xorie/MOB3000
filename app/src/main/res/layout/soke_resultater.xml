@@ -18,7 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:srcCompat="@drawable/logo5" />
+        tools:srcCompat="@drawable/logo5"
+        android:contentDescription="@string/logo"/>
 
     <Button
         android:id="@+id/backbtn"

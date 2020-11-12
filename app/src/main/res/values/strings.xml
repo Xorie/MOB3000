@@ -15,7 +15,7 @@
     <string name="campus">Campus</string>
     <string name="year">Årskull</string>
     <string name="education">Utdanning</string>
-    <string name="subject">Fag</string>
+    <string name="subject">Fagkode</string>
     <string name="bio">Biografi</string>
     <string name="link">Lik til sosiale medier</string>
     <string name="userPic">Last opp bilde</string>
@@ -32,7 +32,7 @@
     <string name="overskrift1">Studentnr:</string>
     <string name="overskrift2">Fornavn:</string>
     <string name="overskrift3">Etternavn:</string>
-    <string name="overskrift4">Skolenavn:</string>
+    <string name="overskrift4">Campus:</string>
     <string name="overskrift5">Fag der bruker ønsker gruppe:</string>
     <string name="overskrift6">Årskull:</string>
     <string name="logout">Logg ut</string>
@@ -40,4 +40,7 @@
     <string name="delete">Slett bruker</string>
     <string name="sok">Søk</string>
     <string name="searchresults">Søkeresultater:</string>
+    <string name="logo">Logo</string>
+    <string name="passwordIcon">Passordsikon</string>
+    <string name="usernameIcon">Brukernavnikon</string>
 </resources>

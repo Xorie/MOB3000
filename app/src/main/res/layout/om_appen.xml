@@ -20,7 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/logo5" />
+        app:srcCompat="@drawable/logo5"
+        android:contentDescription="@string/logo"/>
 
     <Button
         android:id="@+id/account"
@@ -52,7 +53,8 @@
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintVertical_bias="0.419"
+        android:autofillHints="@string/search"/>
 
     <TextView
         android:id="@+id/textView"

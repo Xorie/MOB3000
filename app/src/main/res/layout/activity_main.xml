@@ -22,7 +22,8 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintVertical_bias="0.289"
+        android:autofillHints="@string/studentnr"/>
 
     <EditText
         android:id="@+id/password"
@@ -39,7 +40,8 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.408"
+        android:autofillHints="@string/password"/>
 
     <Button
         android:id="@+id/buttonLogin"
@@ -63,7 +65,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/logo"
         android:src="@drawable/logo5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +114,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.289"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/user"
+        android:contentDescription="@string/usernameIcon"/>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -125,6 +128,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.408"
-        app:srcCompat="@drawable/password" />
+        app:srcCompat="@drawable/password"
+        android:contentDescription="@string/passwordIcon"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
