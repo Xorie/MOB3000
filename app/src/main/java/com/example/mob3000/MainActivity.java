@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Du må fylle inn alle feltene!", Toast.LENGTH_LONG).show();
         } else {
             //fra databasen
-            MyDatabase database = MyDatabase.getDatabase(getApplicationContext());
+            final MyDatabase database = MyDatabase.getDatabase(getApplicationContext());
             final StudentDao sdao = database.getStudentDao();
             new Thread(new Runnable() {
                 @Override
@@ -46,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
                         } else {
-                            Intent intent = new Intent(MainActivity.this, OmAppen.class);
+                            final List<Student> bruker_liste = sdao.loadAllStudent(id);
+                            Intent intent = (new Intent(MainActivity.this, OmAppen.class).putExtra("ID", (Serializable) bruker_liste).putExtra("SID", id));
                             startActivity(intent);
                         }
                     }
@@ -61,11 +63,6 @@ public class MainActivity extends AppCompatActivity {
         //for å gå til registering
         public void getSecond (View view){
             Intent intent = new Intent(MainActivity.this, Registrering.class);
-            startActivity(intent);
-        }
-
-        public void getThird (View view){
-            Intent intent = new Intent(this, BrukerProfil.class);
             startActivity(intent);
         }
     }

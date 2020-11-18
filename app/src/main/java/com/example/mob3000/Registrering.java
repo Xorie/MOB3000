@@ -19,7 +19,6 @@ public class Registrering  extends AppCompatActivity implements AdapterView.OnIt
     Spinner spin;
         String[] campuslist = { "Bø","Drammen","Kongsberg","Nettstudier","Porsgrunn","Rauland","Ringerike","Vestfold"};
     private MyDatabase db;
-    private StudentDao sdao;
 
 
     @Override
@@ -43,21 +42,26 @@ public class Registrering  extends AppCompatActivity implements AdapterView.OnIt
 
 
     public void onClickSave(View view) {
+        final String id = studentnr.getText().toString();
         final String studpass = password.getText().toString();
+        final String firstname = firstName.getText().toString();
+        final String lastname = lastName.getText().toString();
+        final String campus = spin.getSelectedItem().toString();
+        final String schoolyear = year.getText().toString();
+        final String sub = subject.getText().toString();
+        db = MyDatabase.getDatabase(getApplicationContext());
+        final StudentDao sdao = db.getStudentDao();
         try {
             String kryptering = Kryptering.encrypt(studpass);
             final Student student = new Student();
-            student.setSid(studentnr.getText().toString());
+            student.setSid(id);
             student.setPassword(kryptering);
-            student.setFirstname(firstName.getText().toString());
-            student.setLastname(lastName.getText().toString());
-            student.setCampus(spin.getSelectedItem().toString());
-            student.setYear(year.getText().toString());
-            student.setSubject(subject.getText().toString());
-
-            if(validateInput(student)){
-                db = MyDatabase.getDatabase(getApplicationContext());
-                sdao = db.getStudentDao();
+            student.setFirstname(firstname);
+            student.setLastname(lastname);
+            student.setCampus(campus);
+            student.setYear(schoolyear);
+            student.setSubject(sub);
+            if (validateInput(student)) {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -66,11 +70,10 @@ public class Registrering  extends AppCompatActivity implements AdapterView.OnIt
                 }).start();
                 Intent intent = new Intent(Registrering.this, MainActivity.class);
                 startActivity(intent);
-            }
-            else {
+            } else {
                 Toast.makeText(getApplicationContext(), "Fyll alle feltene!", Toast.LENGTH_LONG).show();
             }
-        } catch (Exception e) {
+        } catch(Exception e){
             e.printStackTrace();
         }
     }
@@ -91,12 +94,17 @@ public class Registrering  extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(),campuslist[position] , Toast.LENGTH_LONG).show();
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void goBack (View view){
+        Intent intent = new Intent(Registrering.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

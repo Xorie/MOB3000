@@ -39,6 +39,9 @@
     <string name="logout">Logg ut</string>
     <string name="back">Tilbake</string>
     <string name="delete">Slett bruker</string>
+    <string name="sok">Søk</string>
+    <string name="searchresults">Søkeresultater</string>
+    <string name="savechanges">Lagre endringer</string>
 
 
     <string-array name="course_list">

@@ -1,6 +1,6 @@
 package com.example.mob3000;
 
-import android.app.Activity;
+
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,17 +17,23 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuAdapter;
 import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class BrukerProfil extends AppCompatActivity {
     private MyDatabase mDb;
-    private DataAdapter mAdapter;
+    private StudentAdapter mAdapter;
     private Button invite;
     private RecyclerView recView;
 
@@ -35,7 +42,7 @@ public class BrukerProfil extends AppCompatActivity {
     private final int MAX_NUM = 99;
     private int notification_num_count = 1;
 
-
+    /*
     private  View.OnClickListener onItemClickListener = new View.OnClickListener(){
         @Override
         public void onClick(View v) {
@@ -53,13 +60,19 @@ public class BrukerProfil extends AppCompatActivity {
                 }
             });
         }
-    };
+    };*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bruker_profil);
+        mDb = MyDatabase.getDatabase(getApplicationContext());
+        recView = findViewById(R.id.student_recview);
+        recView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter = new StudentAdapter(this);
+        recView.setAdapter(mAdapter);
+
         num = findViewById(R.id.notification_num);
         invite = findViewById(R.id.invite);
         invite.setOnClickListener(new View.OnClickListener() {
@@ -120,10 +133,11 @@ public class BrukerProfil extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-                final List<Student> studentList = mDb.getStudentDao().loadAllStudent();
+                Intent i = getIntent();
+                final List<Student> bruker_liste = mDb.getStudentDao().loadAllStudent(i.getStringExtra("SID"));
                 runOnUiThread(new Runnable() {
                     @Override
-                    public void run() {mAdapter.setData(studentList);}
+                    public void run() {mAdapter.setData(bruker_liste);}
                 });
             }
         });
@@ -169,22 +183,36 @@ public class BrukerProfil extends AppCompatActivity {
     }
 
 
-    /* om bruker ønsker å slette profilen sin
+    // om bruker ønsker å slette profilen sin
     public void onClickDelete(View view) {
-
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-
-            int position = 1;
-            @Override
-            public void run() {
-                if (mAdapter.getItemCount()>=1){
-                    //int position=0;
-                    List<Drink> drinkList = mAdapter.getData();
-                    mDb.mydrinksDao().deleteDrink(drinkList.get(position));
-                    showListData();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    final MyDatabase database = MyDatabase.getDatabase(getApplicationContext());
+                    final StudentDao sdao = database.getStudentDao();
+                    Intent i = getIntent();
+                    final String bruker = i.getStringExtra("SID");
+                    System.out.println(bruker);
+                    sdao.deleteById(bruker);
+                    Intent intent = new Intent(BrukerProfil.this, MainActivity.class);
+                    startActivity(intent);
                 }
-            }
-        });
+        }).start();
 
-    }*/
+    }
+
+    public void onClickUpdate(View view) {
+        Intent i = getIntent();
+        final List<Student> bruker_liste = (List<Student>) i.getSerializableExtra("ID");
+        Intent intent = (new Intent(BrukerProfil.this, UpdateStudent.class).putExtra("ID", (Serializable) bruker_liste));
+        startActivity(intent);
+    }
+
+    public void onClickBack(View view) {
+        Intent i = getIntent();
+        final List<Student> bruker_liste = (List<Student>) i.getSerializableExtra("ID");
+        final String bruker = i.getStringExtra("SID");
+        Intent intent = (new Intent(this, OmAppen.class).putExtra("ID", (Serializable) bruker_liste).putExtra("SID", bruker));
+        startActivity(intent);
+    }
 }
