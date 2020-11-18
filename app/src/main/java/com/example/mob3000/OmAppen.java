@@ -48,7 +48,10 @@ public class OmAppen extends AppCompatActivity {
     }
 
     public void getAccount(View view) {
-        Intent intent = new Intent(this, BrukerProfil.class);
+        Intent i = getIntent();
+        final List<Student> bruker_liste = (List<Student>) i.getSerializableExtra("ID");
+        final String bruker = i.getStringExtra("SID");
+        Intent intent = (new Intent(this, BrukerProfil.class).putExtra("ID", (Serializable) bruker_liste).putExtra("SID", bruker));
         startActivity(intent);
     }
 }

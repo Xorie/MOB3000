@@ -12,8 +12,11 @@ import java.util.List;
 @Dao
 public interface  StudentDao {
 
-    @Query("Select * from Student ")
-    List<Student> loadAllStudent();
+    @Query("Select * from Student Where sid = (:studentid)")
+    List<Student> loadAllStudent(String studentid);
+
+    @Query("Select * from Student Where sid = (:id)")
+    Student loadStudentById(String id);
 
     //henter studentinformasjon
     @Query("Select * from Student Where sid = (:username) AND password = (:password)")
@@ -28,7 +31,11 @@ public interface  StudentDao {
     @Update
     void updateStudent(Student student);
 
-    @Delete
-    void deleteStudent(Student student);
+    @Query("DELETE FROM Student WHERE sid = :id")
+    void deleteById(String id);
+    /*
+    @Query("Delete from Student Where sid = (:studentid)")
+    Student deleteStudent(String studentid);
+    */
 }
 
