@@ -1,21 +1,22 @@
 package com.example.mob3000;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SokeResultater extends AppCompatActivity {
     private MyDatabase mDb;
     private SearchDataAdapter mAdapter;
-    private OmAppen oa = new OmAppen();
 
     private RecyclerView recView;
 
@@ -31,7 +32,13 @@ public class SokeResultater extends AppCompatActivity {
                     if (mAdapter.getItemCount() >= 1) {
                         //int position=0;
                         List<Student> soke_liste = mAdapter.getData();
-                        showListData();
+                        List<Student> bruker_liste = new ArrayList<>();
+                        Student student = soke_liste.get(position);
+                        bruker_liste.add(student);
+                        Intent intent = (new Intent(SokeResultater.this, BrukerProfil.class).putExtra("LIST", (Serializable) bruker_liste));
+                        startActivity(intent);
+                        //mDb.getStudentDao().deleteStudent(soke_liste.get(position));
+                        //showListData();
                     }
                 }
             });
@@ -71,12 +78,22 @@ public class SokeResultater extends AppCompatActivity {
             public void run() {
                 Intent i = getIntent();
                 final List<Student> soke_liste = (List<Student>) i.getSerializableExtra("LIST");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter.setData(soke_liste);
+
+                if(soke_liste.isEmpty()) {
+                    if (Looper.myLooper() == null)
+                    {
+                        Looper.prepare();
                     }
-                });
+                    Toast.makeText(SokeResultater.this, "Ingen resultater!", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mAdapter.setData(soke_liste);
+                        }
+                    });
+                }
             }
         });
     }
@@ -87,7 +104,9 @@ public class SokeResultater extends AppCompatActivity {
     }
 
     public void getAccount(View view) {
-        Intent intent = new Intent(this, BrukerProfil.class);
+        Intent i = getIntent();
+        final String bruker = i.getStringExtra("SID");
+        Intent intent = (new Intent(this, BrukerProfil.class).putExtra("SID", bruker));
         startActivity(intent);
     }
 }

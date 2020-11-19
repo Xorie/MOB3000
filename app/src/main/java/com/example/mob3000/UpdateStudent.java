@@ -3,11 +3,13 @@ package com.example.mob3000;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -97,12 +99,10 @@ public class UpdateStudent extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-                if (!intent.hasExtra(Constants.UPDATE_Student_Id)) {
-                    mDb.getStudentDao().insertStudent(student);
-                } else {
-                    student.setSid(mStudentId);
-                    mDb.getStudentDao().updateStudent(student);
-                }
+                student.setSid(mStudentId);
+                mDb.getStudentDao().updateStudent(student);
+                Looper.prepare();
+                Toast.makeText(UpdateStudent.this, "Brukerinformasjon oppdatert!", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

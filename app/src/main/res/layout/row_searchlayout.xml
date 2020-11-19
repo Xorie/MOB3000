@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="40dp"
+    android:drawSelectorOnTop="false"
+    android:listSelector="@android:color/darker_gray">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/srStudentid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/studentnr"
+        android:textColor="@color/colorText" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/srFirstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/firstName"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/srFirstname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/firstName"
-                android:textColor="@color/colorText" />
+    <TextView
+        android:id="@+id/srLastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/lastName"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/srLastname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/lastName"
-                android:textColor="@color/colorText" />
+    <TextView
+        android:id="@+id/srCampus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/campus"
+        android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/srSchool"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/school"
-                android:textColor="@color/colorText" />
-
-            <TextView
-                android:id="@+id/srSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/subject"
-                android:textColor="@color/colorText" />
-
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+        android:id="@+id/srSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/subject"
+        android:textColor="@color/colorText" />
 
 </LinearLayout>

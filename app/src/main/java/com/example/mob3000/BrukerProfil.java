@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -134,7 +135,14 @@ public class BrukerProfil extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = getIntent();
-                final List<Student> bruker_liste = mDb.getStudentDao().loadAllStudent(i.getStringExtra("SID"));
+                String studentid = i.getStringExtra("SID");
+                final List<Student> bruker_liste;
+                if(studentid != null) {
+                    bruker_liste = mDb.getStudentDao().loadAllStudent(studentid);
+                }
+                else {
+                    bruker_liste = (List<Student>) i.getSerializableExtra("LIST");
+                }
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {mAdapter.setData(bruker_liste);}
@@ -194,6 +202,8 @@ public class BrukerProfil extends AppCompatActivity {
                     final String bruker = i.getStringExtra("SID");
                     System.out.println(bruker);
                     sdao.deleteById(bruker);
+                    Looper.prepare();
+                    Toast.makeText(BrukerProfil.this, "Bruker slettet!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(BrukerProfil.this, MainActivity.class);
                     startActivity(intent);
                 }
