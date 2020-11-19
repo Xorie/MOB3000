@@ -33,8 +33,10 @@ public class OmAppen extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Intent i = getIntent();
                 final List<Student> sok_liste = database.getStudentDao().sok(sok_tekst);
-                Intent intent = (new Intent(OmAppen.this, SokeResultater.class).putExtra("LIST", (Serializable) sok_liste));
+                final String bruker = i.getStringExtra("SID");
+                Intent intent = (new Intent(OmAppen.this, SokeResultater.class).putExtra("LIST", (Serializable) sok_liste).putExtra("SID", bruker));
                 startActivity(intent);
             }
         }).start();

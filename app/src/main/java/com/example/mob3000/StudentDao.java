@@ -31,6 +31,9 @@ public interface  StudentDao {
     @Update
     void updateStudent(Student student);
 
+    @Delete
+    void deleteStudent(Student student);
+
     @Query("DELETE FROM Student WHERE sid = :id")
     void deleteById(String id);
     /*

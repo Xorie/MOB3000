@@ -25,17 +25,15 @@ public class SearchDataAdapter extends RecyclerView.Adapter<SearchDataAdapter.Se
 
     class SearchViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable for any view that will be set as you render a row
-        TextView edFirstname;
-        TextView edLastname;
-        TextView edCampus;
-        TextView edSubject;
+        TextView edStudentid, edFirstname, edLastname, edCampus, edSubject;
 
         public SearchViewHolder(View itemView) {
             super(itemView);
             // Viewholder gets the handles for each view items in a row
+            edStudentid = (TextView) itemView.findViewById(R.id.srStudentid);
             edFirstname = (TextView) itemView.findViewById(R.id.srFirstname);
             edLastname = (TextView) itemView.findViewById(R.id.srLastname);
-            edCampus = (TextView) itemView.findViewById(R.id.srSchool);
+            edCampus = (TextView) itemView.findViewById(R.id.srCampus);
             edSubject = (TextView) itemView.findViewById(R.id.srSubject);
 
 
@@ -57,6 +55,7 @@ public class SearchDataAdapter extends RecyclerView.Adapter<SearchDataAdapter.Se
 
         Student currentStudent = mStudent.get(position);
         //  show the data in the views
+        holder.edStudentid.setText(currentStudent.getSid());
         holder.edFirstname.setText(currentStudent.getFirstname());
         holder.edLastname.setText(currentStudent.getLastname());
         holder.edCampus.setText(currentStudent.getCampus());
