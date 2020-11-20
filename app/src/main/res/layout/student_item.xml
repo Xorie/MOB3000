@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/studentnr"
             android:textColor="@color/colorText"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="@string/firstName"
             android:textColor="@color/colorText"
-            android:textSize="25dp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/student_lastname"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lastName"
             android:textColor="@color/colorText"
-            android:textSize="25dp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/student_campus"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="@string/campus"
             android:textColor="@color/colorText"
-            android:textSize="25dp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/student_year"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="@string/year"
             android:textColor="@color/colorText"
-            android:textSize="25dp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/student_subject"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="@string/subject"
             android:textColor="@color/colorText"
-            android:textSize="25dp" />
+            android:textSize="25sp" />
 
     </LinearLayout>
 
@@ -77,6 +77,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/eddit"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

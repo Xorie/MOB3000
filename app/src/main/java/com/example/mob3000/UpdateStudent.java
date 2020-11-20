@@ -119,54 +119,11 @@ public class UpdateStudent extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    /*
-    public void updateStudent(View view) {
-        final String id = edStudentnr.getText().toString();
-        final String studpass = edPassword.getText().toString();
-        final String firstname = edFirstname.getText().toString();
-        final String lastname = edLastname.getText().toString();
-        final String campus = edCampus.getText().toString();
-        final String schoolyear = edYear.getText().toString();
-        final String sub = edSubject.getText().toString();
-        mDb = MyDatabase.getDatabase(getApplicationContext());
-        final StudentDao sdao = mDb.getStudentDao();
-        try {
-            String kryptering = Kryptering.encrypt(studpass);
-            final Student student = new Student();
-            student.setSid(id);
-            student.setPassword(kryptering);
-            student.setFirstname(firstname);
-            student.setLastname(lastname);
-            student.setCampus(campus);
-            student.setYear(schoolyear);
-            student.setSubject(sub);
 
-            if (validateInput(student)) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        sdao.updateStudent(student);
-                    }
-                }).start();
-            } else {
-                Toast.makeText(getApplicationContext(), "Fyll alle feltene!", Toast.LENGTH_LONG).show();
-            }
-        } catch(Exception e){
-            e.printStackTrace();
-        }
+    //ikke ferdig
+    public void goBackBruker (View view){
+        Intent intent = new Intent(UpdateStudent.this, BrukerProfil.class);
+        startActivity(intent);
     }
 
-    //tester om alle feltene er fylt inn
-    private Boolean validateInput(Student student){
-        if(student.getSid().isEmpty() ||
-                student.getPassword().isEmpty() ||
-                student.getFirstname().isEmpty() ||
-                student.getLastname().isEmpty() ||
-                student.getCampus().isEmpty() ||
-                student.getSubject().isEmpty() ||
-                student.getYear().isEmpty()){
-            return false;
-        }
-        return true;
-    }*/
 }

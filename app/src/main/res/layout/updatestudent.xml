@@ -4,8 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@drawable/gradient_background"
     tools:context=".UpdateStudent">
+
+    <TextView
+        android:id="@+id/overskrift7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overskrift7"
+        android:textColor="@color/colorText"
+        android:textSize="30sp"/>
+
+    <View
+        android:id="@+id/divider18"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:attr/listDivider" />
 
     <EditText
         android:id="@+id/editTextStudentid"
@@ -13,7 +27,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:text="@string/studentnr" />
+        android:text="@string/studentnr"
+        android:textColor="@color/colorText"/>
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -21,7 +36,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="@string/password" />
+        android:text="@string/password"
+        android:textColor="@color/colorText"/>
 
     <EditText
         android:id="@+id/editTextFirstName"
@@ -29,7 +45,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/firstName" />
+        android:text="@string/firstName"
+        android:textColor="@color/colorText"/>
 
     <EditText
         android:id="@+id/editTextLastName"
@@ -37,7 +54,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/lastName" />
+        android:text="@string/lastName"
+        android:textColor="@color/colorText"/>
 
     <EditText
         android:id="@+id/editTextCampus"
@@ -45,7 +63,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="none"
-        android:text="@string/campus"/>
+        android:text="@string/campus"
+        android:textColor="@color/colorText"/>
 
     <EditText
         android:id="@+id/editTextYear"
@@ -53,7 +72,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:text="@string/year" />
+        android:text="@string/year"
+        android:textColor="@color/colorText"/>
 
     <EditText
         android:id="@+id/editTextSubject"
@@ -61,19 +81,40 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/subject" />
+        android:text="@string/subject"
+        android:textColor="@color/colorText"/>
+
+    <View
+        android:id="@+id/divider9"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="?android:attr/listDivider" />
 
     <Button
         android:id="@+id/save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/savechanges"
-        />
+        android:background="@color/colorOrange"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="?android:attr/listDivider" />
 
     <Button
         android:id="@+id/goback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/back" />
+        android:text="@string/back"
+        android:onClick="goBackBruker"
+        android:background="@color/colorYellow"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Registrering"
-    android:background="@drawable/background">
+    android:background="@drawable/gradient_background">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -76,7 +76,8 @@
     <Spinner
         android:id="@+id/campus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="40dp"
+        android:background="@color/colorText"/>
 
     <View
         android:id="@+id/divider8"
@@ -123,11 +124,12 @@
         android:id="@+id/reg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorOrange"
-        android:text="@string/reg"
-        android:textColor="@color/colorText"
+        android:background="@color/colorYellow"
         android:onClick="onClickSave"
-        android:textAllCaps="false"/>
+        android:text="@string/reg"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"/>
 
     <View
         android:id="@+id/divider3"
@@ -141,8 +143,10 @@
         android:layout_height="wrap_content"
         android:text="@string/back"
         android:onClick="goBack"
+        android:textAllCaps="false"
         android:background="@color/colorOrange"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorText"
+        android:textSize="20sp"/>
 
 </LinearLayout>
 </ScrollView>

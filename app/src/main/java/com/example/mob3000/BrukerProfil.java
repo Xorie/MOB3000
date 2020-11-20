@@ -43,26 +43,6 @@ public class BrukerProfil extends AppCompatActivity {
     private final int MAX_NUM = 99;
     private int notification_num_count = 1;
 
-    /*
-    private  View.OnClickListener onItemClickListener = new View.OnClickListener(){
-        @Override
-        public void onClick(View v) {
-            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) v.getTag();
-            final int position = viewHolder.getAdapterPosition();
-
-            AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                @Override
-                public void run() {
-                    if (mAdapter.getItemCount()>=1){
-                        //int position=0;
-                        List<Student> studentList = mAdapter.getData();
-                        showListData();
-                    }
-                }
-            });
-        }
-    };*/
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,8 +12,8 @@
     <color name="notification"></color>
 
 
-    <!-- normal bakgrunn -->
-    <color name="startcolor">#8EEBF3</color>
-    <color name="endcolor">#093B5B</color>
-    <color name="darkmode">#000000</color>
+    <!-- dark mode bakgrunn -->
+    <color name="startcolor">#000000</color>
+    <color name="endcolor">#000000</color>
+    <color name="darkmode">#FFFFFF</color>
 </resources>
