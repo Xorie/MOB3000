@@ -87,6 +87,7 @@
         android:layout_height="18dp"
         app:cardBackgroundColor="@color/colorRed"
         app:cardCornerRadius="10dp"
+        android:id="@+id/notification_dot"
         app:layout_constraintEnd_toEndOf="@+id/notification_bell"
         app:layout_constraintTop_toTopOf="@+id/notification_bell">
 

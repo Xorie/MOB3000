@@ -67,7 +67,7 @@
         <item>Gruppe 5</item>
     </string-array>
 
-    <string name="notificationNum">1</string>
+    <string name="notificationNum"></string>
     <string name="invite">Inviter</string>
     <string name="title_activity_menu">menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
