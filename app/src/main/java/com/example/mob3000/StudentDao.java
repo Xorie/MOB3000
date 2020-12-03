@@ -40,5 +40,7 @@ public interface  StudentDao {
     @Query("Delete from Student Where sid = (:studentid)")
     Student deleteStudent(String studentid);
     */
+
+
 }
 
