@@ -7,10 +7,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class DialogInvite extends AppCompatActivity {
-    TextView brukernavn;
-    Spinner emner;
-    Spinner grupper;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

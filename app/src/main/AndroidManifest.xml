@@ -9,10 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DialogInvite"></activity>
-        <activity
-            android:name=".Notification"
-            android:parentActivityName=".BrukerProfil" />
+        <activity android:name=".Notification"></activity>
+        <activity android:name=".DialogInvite" />
         <activity
             android:name=".Registrering"
             android:parentActivityName=".MainActivity" />

@@ -3,10 +3,8 @@ package com.example.mob3000;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -42,60 +40,37 @@ public class BrukerProfil extends AppCompatActivity {
     private String valgt_emne;
     private String valgt_gruppe;
     private String kommentar;
+    private int notificationID = 1;
+    private static final String CHANNEL_ID = "default";
 
-    public String getValgt_emne() {
-        return valgt_emne;
-    }
-
-    public String getValgt_gruppe() {
-        return valgt_gruppe;
-    }
-
-    public String getKommentar() {
-        return kommentar;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bruker_profil);
+        createNotificationChannel();
         mDb = MyDatabase.getDatabase(getApplicationContext());
         recView = findViewById(R.id.student_recview);
         recView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new StudentAdapter(this);
         recView.setAdapter(mAdapter);
+
         notification_dot = findViewById(R.id.notification_dot);
         notification_bell = findViewById(R.id.notification_bell);
         if(notification_num_count == 0){
             notification_dot.setVisibility(View.INVISIBLE);
         }
 
-        Intent resultIntent = new Intent(this, Notification.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addNextIntentWithParentStack(resultIntent);
-        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationCompat.Builder build = new NotificationCompat.Builder(this, "default")
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
-                .setContentTitle("Studentbay")
-                .setContentText("du har fått en invitasjon")
-                .setAutoCancel(true)
-                .setSound(null, AudioManager.STREAM_NOTIFICATION)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        build.setContentIntent(resultPendingIntent);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
         notification_bell.setOnClickListener(v -> {
-            setContentView(R.layout.activity_notification);
-            TextView intro = findViewById(R.id.introduction);
-            TextView desc = findViewById(R.id.description);
-
-
-            intro.setText("[navn] ønsker å invitere deg til " + valgt_gruppe + " i emnet " + valgt_emne);
-            desc.setText(kommentar);
-
             notification_num_count = 0;
             notification_dot.setVisibility(View.INVISIBLE);
-            notification_bell.setEnabled(false);
+            Intent intent = new Intent(BrukerProfil.this, Notification.class);
+            intent.putExtra("Navn", "bruker"); // hardkodet inntil videre
+            intent.putExtra("Emne", valgt_emne);
+            intent.putExtra("Gruppe", valgt_gruppe);
+            intent.putExtra("Kommentar", kommentar);
+            startActivity(intent);
         });
 
         num = findViewById(R.id.notification_num);
@@ -107,7 +82,6 @@ public class BrukerProfil extends AppCompatActivity {
             final Spinner emner = myView.findViewById(R.id.listeEmner);
             final Spinner grupper = myView.findViewById(R.id.listeGrupper);
             final EditText user_input = myView.findViewById(R.id.userinput);
-
 
             ArrayAdapter<String> adapter1 = new ArrayAdapter<>(BrukerProfil.this,
                     android.R.layout.simple_spinner_item,
@@ -126,10 +100,30 @@ public class BrukerProfil extends AppCompatActivity {
                     Toast.makeText(BrukerProfil.this, "Invitasjon sendt",
                             Toast.LENGTH_SHORT).show();
                     increaseNum();
-                    notificationManager.notify(100, build.build());
                     valgt_emne = emner.getSelectedItem().toString();
                     valgt_gruppe = grupper.getSelectedItem().toString();
                     kommentar = user_input.getText().toString();
+
+                    Intent intent = new Intent(BrukerProfil.this, Notification.class);
+                    intent.putExtra("Navn", "bruker"); // hardkodet inntil videre
+                    intent.putExtra("Emne", valgt_emne);
+                    intent.putExtra("Gruppe", valgt_gruppe);
+                    intent.putExtra("Kommentar", kommentar);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    PendingIntent pendingIntent = PendingIntent.getActivity(
+                            BrukerProfil.this, 0, intent, 0
+                    );
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(BrukerProfil.this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.ic_notifikasjon)
+                            .setContentTitle("Studentbay")
+                            .setContentText("Du har fått en invitasjon")
+                            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                            .setContentIntent(pendingIntent)
+                            .setAutoCancel(true);
+                    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(BrukerProfil.this);
+                    notificationManager.notify(notificationID, builder.build());
+
                 }
             });
             builder.setView(myView);
@@ -204,5 +198,21 @@ public class BrukerProfil extends AppCompatActivity {
         if(notification_num_count > 0){ notification_dot.setVisibility(View.VISIBLE); }
         if(notification_num_count > MAX_NUM){ Log.d("Counter", "Maks antall nådd!"); }
         else num.setText(String.valueOf(notification_num_count));
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }
