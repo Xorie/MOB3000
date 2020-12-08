@@ -26,20 +26,15 @@ public class SokeResultater extends AppCompatActivity {
             RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) v.getTag();
             final int position = viewHolder.getAdapterPosition();
 
-            AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                @Override
-                public void run() {
-                    if (mAdapter.getItemCount() >= 1) {
-                        //int position=0;
-                        List<Student> soke_liste = mAdapter.getData();
-                        List<Student> bruker_liste = new ArrayList<>();
-                        Student student = soke_liste.get(position);
-                        bruker_liste.add(student);
-                        Intent intent = (new Intent(SokeResultater.this, BrukerProfil.class).putExtra("LIST", (Serializable) bruker_liste));
-                        startActivity(intent);
-                        //mDb.getStudentDao().deleteStudent(soke_liste.get(position));
-                        //showListData();
-                    }
+            AppExecutors.getInstance().diskIO().execute(() -> {
+                if (mAdapter.getItemCount() >= 1) {
+                    List<Student> soke_liste = mAdapter.getData();
+                    List<Student> bruker_liste = new ArrayList<>();
+                    Student student = soke_liste.get(position);
+                    bruker_liste.add(student);
+                    String sjekk = "sjekker";
+                    Intent intent = (new Intent(SokeResultater.this, BrukerProfil.class).putExtra("LIST", (Serializable) bruker_liste).putExtra("CHECK", sjekk));
+                    startActivity(intent);
                 }
             });
         }
@@ -99,7 +94,9 @@ public class SokeResultater extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(SokeResultater.this, OmAppen.class);
+        Intent i = getIntent();
+        final String bruker = i.getStringExtra("SID");
+        Intent intent = (new Intent(SokeResultater.this, OmAppen.class).putExtra("SID", bruker));
         startActivity(intent);
     }
 

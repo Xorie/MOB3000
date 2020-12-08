@@ -11,13 +11,20 @@
     tools:context=".Registrering"
     android:background="@drawable/gradient_background">
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <TextView
+        android:id="@+id/title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/colorText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="logo"
-        android:padding="50dp"
-        app:srcCompat="@drawable/logo5" />
+        android:text="@string/registration" />
+
+    <View
+        android:id="@+id/divider20"
+        android:layout_width="match_parent"
+        android:layout_height="42.5dp"
+        android:background="?android:attr/listDivider" />
 
     <EditText
         android:id="@+id/studentnr"
@@ -30,7 +37,7 @@
     <View
         android:id="@+id/divider4"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="25dp"
         android:background="?android:attr/listDivider" />
 
     <EditText
@@ -44,7 +51,7 @@
     <View
         android:id="@+id/divider12"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="25dp"
         android:background="?android:attr/listDivider" />
 
     <EditText
@@ -57,7 +64,7 @@
     <View
         android:id="@+id/divider5"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="25dp"
         android:background="?android:attr/listDivider" />
 
     <EditText
@@ -70,7 +77,7 @@
     <View
         android:id="@+id/divider11"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="25dp"
         android:background="?android:attr/listDivider" />
 
     <Spinner
@@ -82,7 +89,7 @@
     <View
         android:id="@+id/divider8"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="25dp"
         android:background="?android:attr/listDivider" />
 
     <EditText
@@ -97,7 +104,7 @@
     <View
         android:id="@+id/divider10"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="25dp"
         android:background="?android:attr/listDivider" />
 
     <EditText
@@ -110,15 +117,8 @@
     <View
         android:id="@+id/divider7"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="30dp"
         android:background="?android:attr/listDivider" />
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        />
 
     <Button
         android:id="@+id/reg"
@@ -134,7 +134,7 @@
     <View
         android:id="@+id/divider3"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:background="?android:attr/listDivider" />
 
     <Button

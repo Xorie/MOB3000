@@ -47,6 +47,7 @@
     <string name="logo">Logo</string>
     <string name="eddit">Endre</string>
     <string name="btndark">Dark mode</string>
+    <string name="forklaring">Trykk på en student for å se profilen deres</string>
 
 
     <string-array name="course_list">

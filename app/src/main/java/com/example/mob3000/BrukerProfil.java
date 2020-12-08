@@ -31,7 +31,7 @@ public class BrukerProfil extends AppCompatActivity {
     private MyDatabase mDb;
     private StudentAdapter mAdapter;
     private RecyclerView recView;
-    private Button invite;
+    private Button invite, delete;
     private TextView num;
     private final int MAX_NUM = 99;
     private int notification_num_count = 0;
@@ -54,11 +54,20 @@ public class BrukerProfil extends AppCompatActivity {
         recView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new StudentAdapter(this);
         recView.setAdapter(mAdapter);
-
+        delete = findViewById(R.id.delete);
+        invite = findViewById(R.id.invite);
+        invite.setVisibility(View.INVISIBLE);
         notification_dot = findViewById(R.id.notification_dot);
         notification_bell = findViewById(R.id.notification_bell);
         if(notification_num_count == 0){
             notification_dot.setVisibility(View.INVISIBLE);
+        }
+        Intent i = getIntent();
+        String sjekk = i.getStringExtra("CHECK");
+        if(sjekk != null) {
+            notification_bell.setVisibility(View.INVISIBLE);
+            delete.setVisibility(View.INVISIBLE);
+            invite.setVisibility(View.VISIBLE);
         }
 
 
@@ -115,7 +124,7 @@ public class BrukerProfil extends AppCompatActivity {
                     );
 
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(BrukerProfil.this, CHANNEL_ID)
-                            .setSmallIcon(R.drawable.ic_notifikasjon)
+                            .setSmallIcon(R.drawable.ic_baseline_notifications_24)
                             .setContentTitle("Studentbay")
                             .setContentText("Du har fått en invitasjon")
                             .setPriority(NotificationCompat.PRIORITY_DEFAULT)

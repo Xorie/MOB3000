@@ -122,7 +122,9 @@ public class UpdateStudent extends AppCompatActivity {
 
     //ikke ferdig
     public void goBackBruker (View view){
-        Intent intent = new Intent(UpdateStudent.this, BrukerProfil.class);
+        Intent i = getIntent();
+        final String bruker = studentid.getText().toString();
+        Intent intent = (new Intent(UpdateStudent.this, BrukerProfil.class).putExtra("SID", bruker));
         startActivity(intent);
     }
 

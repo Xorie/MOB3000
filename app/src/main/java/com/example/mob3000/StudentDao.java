@@ -31,15 +31,9 @@ public interface  StudentDao {
     @Update
     void updateStudent(Student student);
 
-    @Delete
-    void deleteStudent(Student student);
 
     @Query("DELETE FROM Student WHERE sid = :id")
     void deleteById(String id);
-    /*
-    @Query("Delete from Student Where sid = (:studentid)")
-    Student deleteStudent(String studentid);
-    */
 
 
 }

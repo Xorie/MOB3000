@@ -69,18 +69,19 @@
 
     <ImageView
         android:id="@+id/notification_bell"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:contentDescription="@string/title_notifications"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="259dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="685dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.678"
+        app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_notifikasjon" />
+        app:srcCompat="@drawable/ic_baseline_notifications_24" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="18dp"
@@ -117,12 +118,13 @@
         android:text="@string/invite"
         android:textColor="@color/colorText"
         android:textSize="20sp"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notification_bell"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintVertical_bias="0.181" />
 
     <Button
         android:id="@+id/delete"
